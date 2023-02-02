@@ -1,7 +1,7 @@
 ## R graphics ----------------------------------------------------------
 
-opar <- par(bty = 'L',
-            mar = c(2,2,2,1))
+opar <- par(bty = 'L', mar = c(2,2,2,1),
+            font.main = 2)
 
 # plot(..., asp = 1)
 
@@ -23,7 +23,7 @@ plotfn <- function(fn, a, b, n = 100, col = 4, lwd = 2, lty = 1,
     ys <- numeric(n)
     for (i in 1:n) ys[i] <- fn(xs[i])
     plot(xs, ys, type = 'l', col = col, lwd = lwd,
-         main = main, ...)
+         xlab = 'x', ylab = 'y', main = main, ...)
     if (grid) grid()
     invisible(NULL)
 }
