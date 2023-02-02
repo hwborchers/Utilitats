@@ -11,6 +11,11 @@
 # call 'ans' [not 'ans()' !] for last function value
 makeActiveBinding("ans", function() .Last.value, .GlobalEnv)  # ans
 
+# Define your own binary operators
+'%nin%' <- function(x, table) match(x, table, nomatch = 0) == 0
+'%//%'  <- function(p, q) gmp::as.bigq(p, q)
+
+
 
 ## general helpful minis -----------------------------------------------
 
